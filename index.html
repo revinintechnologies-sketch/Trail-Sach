@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Class</title>
+</head>
+<body style="text-align:center; font-family:Arial, sans-serif;">
+
+<h1>Welcome to the Live Class</h1>
+
+<!-- LIVE AREA -->
+<div id="live-area">
+  <iframe width="100%" height="400" 
+  src="https://www.youtube.com/embed/TSrFECzo__E" 
+  frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- QUIZ AREA -->
+<div id="quiz-area" style="display:none; margin-top:20px;">
+  <div id="quiz1" style="display:none;">
+    <h3>Mid Quiz</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfa0NzpZcigv_SIy1EgJ4wtcPOvK9Z7kVsS1qG977w5YnRcFg/viewform?embedded=true" width="100%" height="500" frameborder="0">Loading…</iframe>
+  </div>
+  <div id="quiz2" style="display:none;">
+    <h3>Final Quiz</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScMO7fEn5iXcBIjp1tImtS_W7mNbCZXwlYn1fvjdDXCEe-n_g/viewform?embedded=true" width="100%" height="500" frameborder="0">Loading…</iframe>
+  </div>
+</div>
+
+<!-- CONTROL BUTTONS -->
+<div style="margin-top:20px;">
+  <button onclick="showLive()" style="padding:10px 20px; margin:5px;">Show Live</button>
+  <button onclick="showQuiz('quiz1')" style="padding:10px 20px; margin:5px;">Show Mid Quiz</button>
+  <button onclick="showLive()" style="padding:10px 20px; margin:5px;">Continue Live</button>
+  <button onclick="showQuiz('quiz2')" style="padding:10px 20px; margin:5px;">Show Final Quiz</button>
+</div>
+
+<script>
+function showLive(){
+  document.getElementById('live-area').style.display = 'block';
+  document.getElementById('quiz-area').style.display = 'none';
+  document.getElementById('quiz1').style.display = 'none';
+  document.getElementById('quiz2').style.display = 'none';
+}
+function showQuiz(quizId){
+  document.getElementById('live-area').style.display = 'none';
+  document.getElementById('quiz-area').style.display = 'block';
+  document.getElementById('quiz1').style.display = 'none';
+  document.getElementById('quiz2').style.display = 'none';
+  document.getElementById(quizId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
