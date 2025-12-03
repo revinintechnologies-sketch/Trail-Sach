@@ -27,26 +27,46 @@
     h3 {
       color: #333;
     }
+
+    /* Side-by-side layout for live + chat */
+    #live-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
   </style>
 </head>
 <body>
 
   <!-- LIVE AREA -->
   <div id="live-area" style="text-align:center;">
-    <iframe width="560" height="315" 
-  src="https://www.youtube.com/embed/yIYVFq4VTkw?autoplay=1" 
-  frameborder="0" allowfullscreen></iframe>
+    
+    <div id="live-wrapper">
+      <!-- LIVE VIDEO -->
+      <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/yIYVFq4VTkw?autoplay=1" 
+        frameborder="0" allowfullscreen>
+      </iframe>
+
+      <!-- LIVE CHAT -->
+      <iframe 
+        width="350" height="315"
+        src="https://www.youtube.com/live_chat?v=yIYVFq4VTkw&embed_domain=yourwebsite.com" 
+        frameborder="0">
+      </iframe>
+    </div>
+
   </div>
 
   <!-- QUIZ AREA -->
   <div id="quiz-area" style="display:none; margin-top:20px; text-align:center;">
     <div id="quiz1" style="display:none;">
       <h3>Mid Quiz</h3>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfa0NzpZcigv_SIy1EgJ4wtcPOvK9Z7kVsS1qG977w5YnRcFg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfa0NzpZcigv_SIy1EgJ4wtcPOvK9Z7kVsS1qG977w5YnRcFg/viewform?embedded=true" width="100%" height="500" frameborder="0">Loading…</iframe>
     </div>
     <div id="quiz2" style="display:none;">
       <h3>Final Quiz</h3>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScMO7fEn5iXcBIjp1tImtS_W7mNbCZXwlYn1fvjdDXCEe-n_g/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScMO7fEn5iXcBIjp1tImtS_W7mNbCZXwlYn1fvjdDXCEe-n_g/viewform?embedded=true" width="100%" height="500" frameborder="0">Loading…</iframe>
     </div>
   </div>
 
@@ -63,17 +83,16 @@
     function showLive(){
       document.getElementById('live-area').style.display = 'block';
       document.getElementById('quiz-area').style.display = 'none';
-      if(document.getElementById('quiz1')) document.getElementById('quiz1').style.display = 'none';
-      if(document.getElementById('quiz2')) document.getElementById('quiz2').style.display = 'none';
+      document.getElementById('quiz1').style.display = 'none';
+      document.getElementById('quiz2').style.display = 'none';
     }
     
     function showQuiz(quizId){
       document.getElementById('live-area').style.display = 'none';
       document.getElementById('quiz-area').style.display = 'block';
-      if(document.getElementById('quiz1')) document.getElementById('quiz1').style.display = 'none';
-      if(document.getElementById('quiz2')) document.getElementById('quiz2').style.display = 'none';
-      var el = document.getElementById(quizId);
-      if(el) el.style.display = 'block';
+      document.getElementById('quiz1').style.display = 'none';
+      document.getElementById('quiz2').style.display = 'none';
+      document.getElementById(quizId).style.display = 'block';
     }
   </script>
 
