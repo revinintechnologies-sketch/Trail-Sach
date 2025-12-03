@@ -28,7 +28,6 @@
       color: #333;
     }
 
-    /* Side-by-side layout for live + chat */
     #live-wrapper {
       display: flex;
       justify-content: center;
@@ -40,22 +39,22 @@
 
   <!-- LIVE AREA -->
   <div id="live-area" style="text-align:center;">
-    
     <div id="live-wrapper">
+
       <!-- LIVE VIDEO -->
       <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/yIYVFq4VTkw?autoplay=1" 
+        src="https://www.youtube.com/embed/weNm9N5WtIE?autoplay=1" 
         frameborder="0" allowfullscreen>
       </iframe>
 
       <!-- LIVE CHAT -->
       <iframe 
         width="350" height="315"
-        src="https://www.youtube.com/live_chat?v=yIYVFq4VTkw&embed_domain=yourwebsite.com" 
+        src="https://www.youtube.com/live_chat?v=weNm9N5WtIE&embed_domain=revinintechnologies-sketch.github.io" 
         frameborder="0">
       </iframe>
-    </div>
 
+    </div>
   </div>
 
   <!-- QUIZ AREA -->
@@ -78,7 +77,6 @@
     <button onclick="showQuiz('quiz2')">Show Final Quiz</button>
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
     function showLive(){
       document.getElementById('live-area').style.display = 'block';
